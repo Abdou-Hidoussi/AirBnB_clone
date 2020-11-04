@@ -98,8 +98,9 @@ EOF  help  quit
 $
 '
 
-**But also in non-interactive mode: (like the Shell project in C)**
-'''
+***But also in non-interactive mode: (like the Shell project in C)***
+
+```ruby
 $ echo "help" | ./console.py
 (hbnb)
 
@@ -119,14 +120,13 @@ Documented commands (type help <topic>):
 EOF  help  quit
 (hbnb) 
 $
-'''
+```
+
+
+
+
+
+
+
 
 ## :computer:   Tasks
-
-
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
