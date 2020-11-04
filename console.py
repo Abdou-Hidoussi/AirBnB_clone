@@ -35,10 +35,10 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """ 
-        Creates a new instance of BaseModel 
+        """
+        Creates a new instance of BaseModel
         and saves it to JSON file
-        """ 
+        """
         if(arg == ""):
             print("** class name missing **")
         elif(not hasattr(idClasses, arg)):
@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """
-        Prints the string representation of an instance 
+        Prints the string representation of an instance
         based on the class name and id
         """
         f = FileStorage()
@@ -97,7 +97,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """
-        Prints the string representation of an instance 
+        Prints the string representation of an instance
         based on the class name
         """
         f = FileStorage()
@@ -119,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-        Change the argument key of an instance 
+        Change the argument key of an instance
         based on the class name and id
         """
         f = FileStorage()
