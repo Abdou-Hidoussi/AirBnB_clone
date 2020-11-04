@@ -20,6 +20,7 @@ class idClasses:
 class HBNBCommand(cmd.Cmd):
     """Class for command interpreter"""
     prompt = '(hbnb) '
+    file = None
 
     def do_quit(self, arg):
         "Quit command to exit the program\n"
