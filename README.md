@@ -83,8 +83,10 @@
 
 ## :white_check_mark:     Execution 
 
-**Your shell should work like this in interactive mode:**
-'''
+***Your shell should work like this in interactive mode:***
+
+```ruby
+
 $ ./console.py
 (hbnb) help
 
@@ -96,10 +98,11 @@ EOF  help  quit
 (hbnb) 
 (hbnb) quit
 $
-'''
+```
 
-**But also in non-interactive mode: (like the Shell project in C)**
-'''
+***But also in non-interactive mode: (like the Shell project in C)***
+
+```ruby
 $ echo "help" | ./console.py
 (hbnb)
 
@@ -119,10 +122,45 @@ Documented commands (type help <topic>):
 EOF  help  quit
 (hbnb) 
 $
-'''
-
-## :computer:   Tasks
+```
 
 
+# :computer:   Tasks
 
-.
+### :large_blue_circle:  0. README, AUTHORS
+
+1. Write a `README.md:`
+ - description of the project
+    - description of the command interpreter:
+    * how to start it
+    * how to use it
+    * examples
+2. You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference Docker’s AUTHORS page
+3. You should use branches and pull requests on Github - it will help you as team to organize your work.
+
+### Repo:
+* GitHub repository: `AirBnB_clone`
+* File: `README.md`, `AUTHORS`
+
+### :large_blue_circle: 1. Be PEP8 compliant! 
+
+***Write beautiful code that passes the PEP8 checks.***
+
+### Repo:
+* GitHub repository: `AirBnB_clone`
+
+### :large_blue_circle:  2. Unittests  
+
+***All your files, classes, functions must be tested with unit tests***
+
+```ruby
+guillaume@ubuntu:~/AirBnB$ python3 -m unittest discover tests
+...................................................................................
+...................................................................................
+.......................
+----------------------------------------------------------------------
+Ran 189 tests in 13.135s
+
+OK
+guillaume@ubuntu:~/AirBnB$
+```
