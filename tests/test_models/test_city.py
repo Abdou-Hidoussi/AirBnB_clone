@@ -29,7 +29,7 @@ class TestCityMethods(unittest.TestCase):
         new = City()
         self.assertEqual(str(new), "[{:s}] ({:s}) {}".format(
             new.__class__.__name__, new.id, new.__dict__))
-    
+
     def test_state_id(self):
         new = City()
         self.assertEqual(new.state_id, "")
