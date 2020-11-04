@@ -29,11 +29,14 @@ class HBNBCommand(cmd.Cmd):
         sys.exit(0)
 
     def emptyline(self):
-        "Holder\n"
+        """Ignores empty spaces"""
         pass
 
     def do_create(self, arg):
-        "Holder\n"
+        """ 
+        Creates a new instance of BaseModel 
+        and saves it to JSON file
+        """ 
         if(arg == ""):
             print("** class name missing **")
         elif(not hasattr(idClasses, arg)):
@@ -45,7 +48,10 @@ class HBNBCommand(cmd.Cmd):
             print(new.id)
 
     def do_show(self, arg):
-        "Holder\n"
+        """
+        Prints the string representation of an instance 
+        based on the class name and id
+        """
         f = FileStorage()
         f.reload()
         objs = f.all()
@@ -66,7 +72,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, arg):
-        "Holder\n"
+        """Deletes an instance based on the class name and id"""
         f = FileStorage()
         f.reload()
         objs = f.all()
@@ -88,7 +94,10 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
-        "Holder\n"
+        """
+        Prints the string representation of an instance 
+        based on the class name
+        """
         f = FileStorage()
         f.reload()
         objs = f.all()
@@ -107,7 +116,10 @@ class HBNBCommand(cmd.Cmd):
             print(ls)
 
     def do_update(self, arg):
-        "Holder\n"
+        """
+        Change the argument key of an instance 
+        based on the class name and id
+        """
         f = FileStorage()
         f.reload()
         objs = f.all()
