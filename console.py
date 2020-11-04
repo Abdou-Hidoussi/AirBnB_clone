@@ -6,6 +6,7 @@ from models.engine.file_storage import FileStorage
 
 
 class idClasses:
+    """Class for all other classes"""
     from models.base_model import BaseModel
     from models.user import User
     from models.engine.file_storage import FileStorage
@@ -17,7 +18,7 @@ class idClasses:
 
 
 class HBNBCommand(cmd.Cmd):
-
+    """Class for command interpreter"""
     prompt = '(hbnb) '
 
     def do_quit(self, arg):
