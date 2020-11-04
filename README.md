@@ -83,8 +83,10 @@
 
 ## :white_check_mark:     Execution 
 
-**Your shell should work like this in interactive mode:**
-'
+***Your shell should work like this in interactive mode:***
+
+```ruby
+
 $ ./console.py
 (hbnb) help
 
@@ -96,7 +98,7 @@ EOF  help  quit
 (hbnb) 
 (hbnb) quit
 $
-'
+```
 
 ***But also in non-interactive mode: (like the Shell project in C)***
 
