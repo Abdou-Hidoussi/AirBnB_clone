@@ -22,11 +22,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         "Quit command to exit the program\n"
-        exit()
+        sys.exit(0)
 
     def do_EOF(self, arg):
-        "Quit the program when EOF\n"
-        exit()
+        "Quit command to exit the program\n"
+        sys.exit(0)
+
+    def emptyline(self):
+        "Holder\n"
+        pass
 
     def do_create(self, arg):
         "Holder\n"
