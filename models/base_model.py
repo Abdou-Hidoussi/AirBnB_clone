@@ -11,6 +11,10 @@ class BaseModel:
     att2: created_at
     att3: updated_at
     """
+    created_at = Column(DateTime, nullable=False, default=datetime.now())
+    updated_at = Column(DateTime, nullable=False, default=datetime.now())
+
+
     def __init__(self, *args, **kwargs):
         """initializing an instance"""
         self.id = str(uuid4())
@@ -34,9 +38,6 @@ class BaseModel:
         updates the public instance attribute
         updated_at with the current datetime
         """
-        if type(self.created_at) is str:
-            Date_obj = datetime.strptime(self.created_at, '%Y-%m-%dT%H:%M:%S.%f')
-            self.created_at = Date_obj
         self.updated_at = datetime.now()
         from models import storage
         storage.new(self)
