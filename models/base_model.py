@@ -34,6 +34,9 @@ class BaseModel:
         updates the public instance attribute
         updated_at with the current datetime
         """
+        if type(self.created_at) is str:
+            Date_obj = datetime.strptime(self.created_at, '%Y-%m-%dT%H:%M:%S.%f')
+            self.created_at = Date_obj
         self.updated_at = datetime.now()
         from models import storage
         storage.new(self)
