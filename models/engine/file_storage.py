@@ -15,10 +15,8 @@ from models.review import Review
 class FileStorage:
     """ storage Object
     """
-    def __init__(self, *args, **kwargs):
-        self.__file_path = "file.json"
-        open(self.__file_path, 'a')
-        self.__objects = {}
+        __file_path = "file.json"
+        __objects = {}
 
     def all(self):
         """ holder """
