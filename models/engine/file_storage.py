@@ -17,6 +17,7 @@ class FileStorage:
     """
     __file_path = "file.json"
     __objects = {}
+    open(__file_path, 'a')
 
     def all(self):
         """ holder """
