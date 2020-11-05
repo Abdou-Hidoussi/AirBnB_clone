@@ -10,6 +10,13 @@ import unittest
 
 class TestBaseModelMethods(unittest.TestCase):
 
+    def test_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/base_model.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
     def test_id(self):
         new = BaseModel()
         self.assertEqual(type(new.id), str)
@@ -28,23 +35,6 @@ class TestBaseModelMethods(unittest.TestCase):
         new = BaseModel()
         self.assertEqual(str(new), "[{:s}] ({:s}) {}".format(
             new.__class__.__name__, new.id, new.__dict__))
-
-    def to_dict(self):
-        base = BaseModel()
-        self.assertEqual(type(base.to_dict()), dict)
-
-    def to_dict_attr(self):
-        b1 = BaseModel()
-        dictionary = base.to_dict()
-        self.assertEqual('id' in dictionary, True)
-        self.assertEqual('__class__' in dictionary, True)
-        self.assertEqual('created_at' in dictionary, True)
-        self.assertEqual('updated_at' in dictionary, True)
-
-    def save(self):
-        base = BaseModel()
-        base.save()
-        self.assertTrue(os.path.exists(self.path_file))
 
 if __name__ == '__main__':
     unittest.main()
