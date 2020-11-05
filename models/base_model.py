@@ -14,14 +14,15 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """initializing an instance"""
         self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        self.created_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
         if (kwargs is not None):
             for key, value in kwargs.items():
                 if (key == "created_at" or key == "updated_at"):
                     if (type(value) is str):
                         Date_obj = datetime.strptime(
                             value, '%Y-%m-%dT%H:%M:%S.%f')
+                    self.__dict__[key] = value
                 else:
                     self.__dict__[key] = value
 
@@ -35,7 +36,7 @@ class BaseModel:
         updates the public instance attribute
         updated_at with the current datetime
         """
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.utcnow()
         from models import storage
         storage.new(self)
         storage.save()
