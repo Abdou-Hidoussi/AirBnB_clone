@@ -22,7 +22,7 @@ class BaseModel:
                     if (type(value) is str):
                         Date_obj = datetime.strptime(
                             value, '%Y-%m-%dT%H:%M:%S.%f')
-                    self.__dict__[key] = value
+                        self.__dict__[key] = Date_obj
                 else:
                     self.__dict__[key] = value
 
