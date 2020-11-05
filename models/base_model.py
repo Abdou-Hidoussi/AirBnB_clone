@@ -18,8 +18,10 @@ class BaseModel:
         self.updated_at = datetime.now()
         if (kwargs is not None):
             for key, value in kwargs.items():
-                if key is ("created_at" or "updated_at"):
-                    Date_obj = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                if (key == "created_at" or key == "updated_at"):
+                    if (type(value) is str):
+                        Date_obj = datetime.strptime(
+                            value, '%Y-%m-%dT%H:%M:%S.%f')
                 else:
                     self.__dict__[key] = value
 
