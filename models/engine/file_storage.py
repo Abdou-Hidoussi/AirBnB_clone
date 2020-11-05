@@ -15,10 +15,9 @@ from models.review import Review
 class FileStorage:
     """ storage Object
     """
-    def __init__(self, *args, **kwargs):
-        self.__file_path = "file.json"
-        open(self.__file_path, 'a')
-        self.__objects = {}
+    __file_path = "file.json"
+    __objects = {}
+    open(__file_path, 'a')
 
     def all(self):
         """ holder """
@@ -49,5 +48,5 @@ class FileStorage:
             with open(self.__file_path) as json_file:
                 data = json.load(json_file)
                 for key, value in data.items():
-                    self.__objects[key] = idclasses[value
-                                  ['__class__']](**value)
+                    self.__objects[key] =\
+                        idclasses[value['__class__']](**value)
