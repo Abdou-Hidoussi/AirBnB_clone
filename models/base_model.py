@@ -11,8 +11,8 @@ class BaseModel:
     att2: created_at
     att3: updated_at
     """
-    created_at = datetime.now()
-    updated_at = datetime.now()
+    created_at = datetime.utcnow()
+    updated_at = datetime.utcnow()
 
 
     def __init__(self, *args, **kwargs):
