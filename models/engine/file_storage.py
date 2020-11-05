@@ -49,10 +49,5 @@ class FileStorage:
             with open(self.__file_path) as json_file:
                 data = json.load(json_file)
                 for key, value in data.items():
-                    if (type(value['updated_at']) is str):
-                        value['created_at'] = datetime.strptime(
-                            value['created_at'], "%Y-%m-%dT%H:%M:%S.%f")
-                        value['updated_at'] = datetime.strptime(
-                            value['updated_at'], "%Y-%m-%dT%H:%M:%S.%f")
                     self.__objects[key] =\
                         idclasses[value['__class__']](**value)
