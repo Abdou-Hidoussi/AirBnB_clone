@@ -41,5 +41,10 @@ class TestBaseModelMethods(unittest.TestCase):
         self.assertEqual('created_at' in dictionary, True)
         self.assertEqual('updated_at' in dictionary, True)
 
+    def save(self):
+        base = BaseModel()
+        base.save()
+        self.assertTrue(os.path.exists(self.path_file))
+
 if __name__ == '__main__':
     unittest.main()
