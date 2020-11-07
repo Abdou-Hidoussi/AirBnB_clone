@@ -60,6 +60,18 @@ class HBNBCommand(cmd.Cmd):
         else:
             return arg
 
+    def point_update(self, arg):
+        args = arg.split(".")
+        if "(" and ")" in arg and len(args) is 3:
+            args[2] = args[2].split("(\"")[1]
+            args[2] = args[2].split("\")")[0]
+            args[2] = args[2].split("\", \"")
+            string = args[1] + " " + args[0] + " " + args[2][0]\
+                + " " + args[2][1] + " " + args[2][2]
+            return string
+        else:
+            return arg
+
     def precmd(self, arg):
         x = self.point_all(arg)
         if(x == arg):
@@ -68,6 +80,8 @@ class HBNBCommand(cmd.Cmd):
             x = self.point_show(arg)
         if(x == arg):
             x = self.point_destroy(arg)
+        if(x == arg):
+            x = self.point_update(arg)
         return x
 
     def do_quit(self, arg):
