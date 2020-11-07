@@ -50,12 +50,24 @@ class HBNBCommand(cmd.Cmd):
         else:
             return arg
 
+    def point_destroy(self, arg):
+        args = arg.split(".")
+        if "(" and ")" in arg and len(args) is 2:
+            new = args[1].split("(\"")
+            new[1] = new[1].split("\")")[0]
+            string = new[0] + " " + args[0] + " " + new[1]
+            return string
+        else:
+            return arg
+
     def precmd(self, arg):
         x = self.point_all(arg)
         if(x == arg):
             x = self.point_count(arg)
         if(x == arg):
             x = self.point_show(arg)
+        if(x == arg):
+            x = self.point_destroy(arg)
         return x
 
     def do_quit(self, arg):
