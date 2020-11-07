@@ -24,6 +24,14 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     file = None
 
+    def precmd(self, arg):
+        args = arg.split(".")
+        if "()" in arg and len(args) is 2:
+            string = args[1].split("(")[0] + " " + args[0]
+            return string
+        else:
+            return arg
+
     def do_quit(self, arg):
         "Quit command to exit the program\n"
         sys.exit(0)
