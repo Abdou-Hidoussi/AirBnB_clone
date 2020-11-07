@@ -24,13 +24,27 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     file = None
 
-    def precmd(self, arg):
+    def point_all(self, arg):
         args = arg.split(".")
         if "()" in arg and len(args) is 2:
             string = args[1].split("(")[0] + " " + args[0]
             return string
         else:
             return arg
+
+    def point_count(self, arg):
+        args = arg.split(".")
+        if "()" in arg and len(args) is 2:
+            string = args[1].split("(")[0] + " " + args[0]
+            return string
+        else:
+            return arg
+
+    def precmd(self, arg):
+        x = self.point_all(arg)
+        if(x == arg):
+            x = self.point_count(arg)
+        return x
 
     def do_quit(self, arg):
         "Quit command to exit the program\n"
@@ -156,6 +170,16 @@ class HBNBCommand(cmd.Cmd):
                     setattr(value, args[2], args[3])
                     f.save()
 
+    def do_count(self, arg):
+        f = FileStorage()
+        f.reload()
+        objs = f.all()
+        x = 0
+        for obj in objs:
+            obj = obj.split(".")
+            if obj[0] == arg:
+                x += 1
+        print(x)
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
