@@ -44,10 +44,8 @@ article h2 {
 	display: flex;
 	justify-content: center;
 	align-self: flex-end;
-
 	position: absolute;
 	right: 0;
-
 	line-height: 60px;
 	color: #FF5A5F;
 	font-size: 30px;
@@ -65,7 +63,6 @@ article h2 {
 	width: 100%;
 	border-top: 1px solid #DDDDDD;
 	border-bottom: 1px solid #DDDDDD;
-
 	padding-top: 5px;
 	padding-bottom: 12px;
 	margin-top: 10px;
